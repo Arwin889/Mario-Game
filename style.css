@@ -1,0 +1,96 @@
+:root {
+  background: #69c9f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #69c9f5;
+}
+
+.game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+#win-panel {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(330px, calc(100% - 32px));
+  padding: 24px 20px 20px;
+  border: 3px solid #3b2416;
+  border-radius: 14px;
+  background: #ffd447;
+  color: #3b2416;
+  font-family: monospace;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 8px 8px 0 #3b2416;
+  background-image: radial-gradient(#f0b72c 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+#win-panel h1 {
+  margin: 4px 0 8px;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+#win-panel p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#play-again {
+  padding: 10px 18px;
+  border: 3px solid #3b2416;
+  border-radius: 6px;
+  background: #58b83f;
+  color: #fff;
+  font: bold 16px monospace;
+  cursor: pointer;
+}
+
+.win-emoji {
+  font-size: 52px;
+  line-height: 1;
+  animation: celebrate 700ms ease-in-out infinite alternate;
+}
+
+.confetti {
+  color: #e94b35;
+  font-size: 24px;
+  letter-spacing: 4px;
+  animation: confetti-drift 900ms ease-in-out infinite alternate;
+}
+
+@keyframes celebrate {
+  from { transform: translateY(3px) rotate(-8deg); }
+  to { transform: translateY(-9px) rotate(8deg); }
+}
+
+@keyframes confetti-drift {
+  from { transform: translateX(-8px) rotate(-3deg); }
+  to { transform: translateX(8px) rotate(3deg); }
+}
